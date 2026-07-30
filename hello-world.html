@@ -6,11 +6,12 @@
 </head>
 <body>
   <h1>Hello, World!</h1>
-  <button id="color-btn">Change Background Color</button>
+  <button id="counter-btn">Count: 0</button>
   <script>
-    document.getElementById('color-btn').addEventListener('click', function () {
-      var randomColor = '#' + Math.floor(Math.random() * 0xffffff).toString(16).padStart(6, '0');
-      document.body.style.backgroundColor = randomColor;
+    var count = 0;
+    document.getElementById('counter-btn').addEventListener('click', function () {
+      count++;
+      this.textContent = 'Count: ' + count;
     });
   </script>
 </body>
