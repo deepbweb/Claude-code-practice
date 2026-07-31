@@ -3,6 +3,11 @@
 <head>
   <meta charset="UTF-8">
   <title>Hello World</title>
+  <style>
+    .completed {
+      text-decoration: line-through;
+    }
+  </style>
 </head>
 <body>
   <h1>Hello, World!</h1>
@@ -17,11 +22,19 @@
       var text = input.value.trim();
       if (!text) return;
       var li = document.createElement('li');
-      li.textContent = text;
+
+      var taskText = document.createElement('span');
+      taskText.textContent = text;
+      li.appendChild(taskText);
+
+      li.addEventListener('click', function () {
+        taskText.classList.toggle('completed');
+      });
 
       var deleteBtn = document.createElement('button');
       deleteBtn.textContent = 'Delete';
-      deleteBtn.addEventListener('click', function () {
+      deleteBtn.addEventListener('click', function (event) {
+        event.stopPropagation();
         list.removeChild(li);
       });
       li.appendChild(deleteBtn);
