@@ -18,6 +18,14 @@
       if (!text) return;
       var li = document.createElement('li');
       li.textContent = text;
+
+      var deleteBtn = document.createElement('button');
+      deleteBtn.textContent = 'Delete';
+      deleteBtn.addEventListener('click', function () {
+        list.removeChild(li);
+      });
+      li.appendChild(deleteBtn);
+
       list.appendChild(li);
       input.value = '';
     }
