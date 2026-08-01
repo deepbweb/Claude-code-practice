@@ -10,6 +10,10 @@ This is a minimal static-HTML practice repository. There is no build system, pac
 
 There are no build/lint/test commands. To view the app, open `hello-world.html` directly in a browser (or serve the directory with any static file server).
 
+## Rules
+
+- Always keep `hello-world.html` as plain HTML/CSS/JS — never add external libraries or frameworks.
+
 ## Architecture
 
 `hello-world.html` is a single-file to-do list app: markup, CSS, and JavaScript all live inline in this one file (no external dependencies, no bundler).
